@@ -3,24 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gumball S7 Info</title>
+    <title>معلومات غامبول S7 | ALL MAGIC</title>
     <style>
-        body { background: #e1f5fe; color: #01579b; font-family: sans-serif; padding: 20px; line-height: 1.6; }
-        .box { background: white; padding: 30px; border-radius: 25px; max-width: 600px; margin: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border-right: 8px solid #00d2ff; }
-        h1 { color: #00d2ff; }
-        .back { display: block; margin-top: 20px; text-decoration: none; color: #01579b; font-weight: bold; }
+        body { 
+            background: #05050a; 
+            color: #e1f5fe; 
+            font-family: 'Segoe UI', sans-serif; 
+            padding: 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+
+        .info-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            padding: 30px; 
+            border-radius: 25px; 
+            max-width: 600px; 
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5); 
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        h1 { color: #00d2ff; text-align: center; }
+
+        /* تنسيق المستطيلات المنيرة */
+        .magic-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            border: 2px solid #00d2ff;
+            background: transparent;
+            position: relative;
+            /* حركة النور المستمر */
+            animation: glowing-border 2s infinite alternate;
+            transition: 0.3s;
+        }
+
+        /* أنيميشن النور */
+        @keyframes glowing-border {
+            0% { box-shadow: 0 0 5px #00d2ff, inset 0 0 5px #00d2ff; border-color: #00d2ff; }
+            100% { box-shadow: 0 0 20px #00d2ff, inset 0 0 10px #00d2ff; border-color: #ffffff; }
+        }
+
+        .magic-button:hover {
+            background: #00d2ff;
+            color: #05050a;
+            transform: scale(1.02);
+        }
+
+        .group-btn { border-color: #9d50bb; animation: glowing-purple 2s infinite alternate; }
+        @keyframes glowing-purple {
+            0% { box-shadow: 0 0 5px #9d50bb, inset 0 0 5px #9d50bb; border-color: #9d50bb; }
+            100% { box-shadow: 0 0 20px #9d50bb, inset 0 0 10px #9d50bb; border-color: #ffffff; }
+        }
+
+        .back { margin-top: 20px; color: #aaa; text-decoration: none; }
     </style>
 </head>
 <body>
-    <div class="box">
+
+    <div class="info-box">
         <h1>عالم غامبول المدهش: الموسم السابع</h1>
-        <p>يعود المسلسل بعنوان "عالم غامبول المدهش الغريب". بدأ العرض في صيف 2025.</p>
+        <p>يعود المسلسل بعنوان "عالم غامبول المدهش الغريب". بدأ العرض في صيف 2025 ليستكمل الأحداث الفوضوية الرائعة.</p>
         <ul>
-            <li>يتكون الموسم من 40 حلقة جديدة.</li>
-            <li>تحسينات بصرية معاصرة وتغيير في الممثلين الصوتيين.</li>
-            <li>قصص جديدة تشمل ذكاءً اصطناعياً يقع في حب نيكول!</li>
+            <li>يتكون الموسم من 40 حلقة مليئة بالمغامرات.</li>
+            <li>تحديثات بصرية مذهلة وتغييرات في الأداء الصوتي.</li>
         </ul>
-        <a href="cartoon.html" class="back">🔙 رجوع</a>
     </div>
+
+    <div class="magic-button">@Gumballsubbot</div>
+
+    <a href="https://t.me/Gumballsubbot" class="magic-button" target="_blank">
+        🤖 اضغط هنا لدخول البوت
+    </a>
+
+    <a href="https://t.me/allcartoonarabic" class="magic-button group-btn" target="_blank">
+        📢 الجروب الرئيسي للبوتات
+    </a>
+
+    <a href="cartoon.html" class="back">🔙 العودة لقائمة الكرتون</a>
+
 </body>
 </html>
