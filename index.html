@@ -2,137 +2,85 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALL MAGIC | البوابة الرئيسية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ALL MAGIC | الرئيسية</title>
     <style>
-        /* إعدادات الخلفية الحيوية */
+        /* تصحيح الهيكل ليكون متمركزاً تماماً */
+        * { box-sizing: border-box; }
+        
         body {
             margin: 0;
             padding: 0;
-            background: #05050a; /* لون داكن عميق */
+            background: #05050a;
             color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow-x: hidden; /* يمنع الاهتزاز الجانبي */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            overflow: hidden;
-            position: relative;
+            gap: 20px;
         }
 
-        /* إضافة تأثير "الضباب السحري" في الخلفية */
-        body::before {
-            content: "";
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(0,210,255,0.05) 0%, transparent 70%);
-            animation: rotateBg 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes rotateBg {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* الجملة الإنجليزية بتأثير النيون */
+        /* تصحيح النص ليكون متجاوباً ولا يخرج عن الشاشة */
         .intro-text {
-            font-size: 2.2rem;
+            font-size: 1.8rem; /* تصغير الحجم قليلاً للموبايل */
             font-weight: bold;
-            text-align: center;
-            margin-bottom: 50px;
+            line-height: 1.2;
+            margin-bottom: 30px;
             text-transform: uppercase;
-            letter-spacing: 2px;
             color: #fff;
-            text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff;
+            text-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff;
             animation: pulse 2s infinite alternate;
         }
 
-        @keyframes pulse {
-            from { opacity: 0.8; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* حاوية الأقسام */
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 85%;
-            max-width: 400px;
-        }
-
-        /* تصميم المستطيلات المنيرة (نفس ستايل غامبول) */
+        /* تصحيح تصميم الأزرار */
         .nav-card {
             display: block;
-            padding: 20px;
-            text-align: center;
+            width: 100%; /* تأكيد العرض الكامل داخل الحاوية */
+            padding: 18px;
             text-decoration: none;
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: bold;
             border-radius: 15px;
             border: 2px solid;
-            transition: 0.4s;
-            position: relative;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.03);
+            transition: 0.3s;
         }
 
-        /* ألوان النيون للأقسام */
-        .cartoon-btn { 
-            border-color: #ff9f43; 
-            animation: glow-orange 2.5s infinite alternate; 
-        }
-        .movies-btn { 
-            border-color: #00d2ff; 
-            animation: glow-blue 3s infinite alternate; 
-        }
-        .series-btn { 
-            border-color: #9d50bb; 
-            animation: glow-purple 3.5s infinite alternate; 
-        }
+        /* ألوان النيون */
+        .cartoon-btn { border-color: #ff9f43; animation: glow-orange 2.5s infinite alternate; }
+        .movies-btn { border-color: #00d2ff; animation: glow-blue 3s infinite alternate; }
+        .series-btn { border-color: #9d50bb; animation: glow-purple 3.5s infinite alternate; }
 
-        /* حركات التوهج المستمر */
-        @keyframes glow-orange {
-            0% { box-shadow: 0 0 5px #ff9f43; }
-            100% { box-shadow: 0 0 20px #ff9f43, inset 0 0 10px #ff9f43; }
-        }
-        @keyframes glow-blue {
-            0% { box-shadow: 0 0 5px #00d2ff; }
-            100% { box-shadow: 0 0 20px #00d2ff, inset 0 0 10px #00d2ff; }
-        }
-        @keyframes glow-purple {
-            0% { box-shadow: 0 0 5px #9d50bb; }
-            100% { box-shadow: 0 0 20px #9d50bb, inset 0 0 10px #9d50bb; }
-        }
+        @keyframes glow-orange { 0% { box-shadow: 0 0 5px #ff9f43; } 100% { box-shadow: 0 0 15px #ff9f43; } }
+        @keyframes glow-blue { 0% { box-shadow: 0 0 5px #00d2ff; } 100% { box-shadow: 0 0 15px #00d2ff; } }
+        @keyframes glow-purple { 0% { box-shadow: 0 0 5px #9d50bb; } 100% { box-shadow: 0 0 15px #9d50bb; } }
 
-        .nav-card:hover {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-        }
+        @keyframes pulse { from { opacity: 0.8; } to { opacity: 1; } }
 
-        .footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.3);
-        }
+        .nav-card:hover { transform: scale(1.02); background: rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
 
-    <div class="intro-text">Finally, We have arrived ALL MAGIC</div>
+    <div class="container">
+        <div class="intro-text">FINALLY, WE HAVE ARRIVED ALL MAGIC</div>
 
-    <div class="menu">
         <a href="cartoon.html" class="nav-card cartoon-btn">📺 قسم الكرتون</a>
         <a href="movies.html" class="nav-card movies-btn">🎬 قسم الأفلام</a>
         <a href="#" class="nav-card series-btn">🎥 قسم المسلسلات (قريباً)</a>
     </div>
-
-    <div class="footer">ALL MAGIC Information Portal © 2026</div>
 
 </body>
 </html>
