@@ -22,87 +22,64 @@
             max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
         }
 
-        h1 { 
-            font-size: 2rem; 
-            margin-bottom: 10px; 
-            color: #fff;
-            text-shadow: 0 0 15px #00d2ff;
-            animation: pulse 2s infinite alternate;
-        }
-
-        /* زر غامبول الضخم بالخلفية الجديدة */
-        .gumball-main-btn {
+        /* تنسيق عام للأزرار التي تحتوي على صور */
+        .image-btn {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             justify-content: center;
             width: 100%;
-            height: 220px; /* زيادة الطول ليظهر اللوجو بوضوح */
-            border-radius: 30px;
+            height: 180px; 
+            border-radius: 20px;
             text-decoration: none;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
-            text-shadow: 3px 3px 10px #000;
-            border: 4px solid #00d2ff;
-            /* استخدام الصورة التي قمت بتسميتها gumball.jpg */
-            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('gumball.jpg'); 
+            text-shadow: 2px 2px 10px #000;
             background-size: cover;
             background-position: center;
-            box-shadow: 0 0 25px #00d2ff;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: 0.4s;
+            padding-bottom: 15px;
             overflow: hidden;
-        }
-
-        .gumball-main-btn:hover {
-            transform: scale(1.03);
-            box-shadow: 0 0 45px #00d2ff;
-            border-color: #fff;
-        }
-
-        /* زر تين تايتنز المضيء */
-        .titans-btn {
-            width: 100%;
-            padding: 20px;
-            text-align: center;
-            background: rgba(106, 17, 203, 0.1);
-            border: 2px solid #9d50bb;
-            border-radius: 18px;
-            color: white;
-            font-size: 1.3rem;
-            font-weight: bold;
             cursor: pointer;
-            transition: 0.3s;
-            animation: glow-purple 3s infinite alternate;
         }
 
-        @keyframes glow-purple {
-            0% { box-shadow: 0 0 5px #9d50bb; }
-            100% { box-shadow: 0 0 20px #9d50bb; }
+        /* زر غامبول */
+        .gumball-btn {
+            border: 3px solid #00d2ff;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('gumball.jpg'); 
+            box-shadow: 0 0 15px #00d2ff;
         }
 
-        @keyframes pulse {
-            from { opacity: 0.8; }
-            to { opacity: 1; }
+        /* زر تين تايتنز - باستخدام صورتك الجديدة */
+        .titans-btn {
+            border: 3px solid #9d50bb;
+            background-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent), url('titans.jpg'); 
+            box-shadow: 0 0 15px #9d50bb;
         }
 
-        .back { margin-top: 30px; color: #888; text-decoration: none; font-weight: bold; }
+        .image-btn:hover {
+            transform: scale(1.03);
+            filter: brightness(1.2);
+        }
+
+        .back { margin-top: 20px; color: #666; text-decoration: none; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Cartoon MAGIC</h1>
+        <h1 style="text-shadow: 0 0 10px #fff; margin-bottom: 10px;">Cartoon MAGIC</h1>
 
-        <a href="gumball.html" class="gumball-main-btn">
+        <a href="gumball.html" class="image-btn gumball-btn">
             GUMBALL NEW S7
         </a>
 
-        <div onclick="alert('سيتم الفتح الساعة 7 اليوم')" class="titans-btn">
-            🟣 TEEN TITANS CLASSIC
+        <div onclick="alert('سيتم الفتح الساعة 7 اليوم')" class="image-btn titans-btn">
+            TEEN TITANS CLASSIC
         </div>
 
         <a href="index.html" class="back">🔙 العودة للرئيسية</a>
