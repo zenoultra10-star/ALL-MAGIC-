@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>معلومات غامبول S7 | ALL MAGIC</title>
     <style>
         body { 
@@ -13,20 +13,21 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
+            min-height: 100vh;
         }
 
         .info-box { 
             background: rgba(255, 255, 255, 0.05); 
-            padding: 30px; 
-            border-radius: 25px; 
-            max-width: 600px; 
+            padding: 25px; 
+            border-radius: 20px; 
+            max-width: 500px; 
             width: 100%;
             box-shadow: 0 10px 40px rgba(0,0,0,0.5); 
             border: 1px solid rgba(0, 210, 255, 0.3);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
-        h1 { color: #00d2ff; text-align: center; }
+        h1 { color: #00d2ff; text-align: center; font-size: 1.5rem; }
 
         /* تنسيق المستطيلات المنيرة */
         .magic-button {
@@ -34,7 +35,7 @@
             width: 100%;
             max-width: 400px;
             padding: 15px;
-            margin: 15px 0;
+            margin: 12px 0;
             text-align: center;
             text-decoration: none;
             color: white;
@@ -42,56 +43,58 @@
             border-radius: 12px;
             font-size: 1.1rem;
             border: 2px solid #00d2ff;
-            background: transparent;
-            position: relative;
-            /* حركة النور المستمر */
+            background: rgba(0, 210, 255, 0.05);
             animation: glowing-border 2s infinite alternate;
             transition: 0.3s;
+            cursor: pointer;
         }
 
-        /* أنيميشن النور */
         @keyframes glowing-border {
-            0% { box-shadow: 0 0 5px #00d2ff, inset 0 0 5px #00d2ff; border-color: #00d2ff; }
-            100% { box-shadow: 0 0 20px #00d2ff, inset 0 0 10px #00d2ff; border-color: #ffffff; }
-        }
-
-        .magic-button:hover {
-            background: #00d2ff;
-            color: #05050a;
-            transform: scale(1.02);
+            0% { box-shadow: 0 0 5px #00d2ff; border-color: #00d2ff; }
+            100% { box-shadow: 0 0 20px #00d2ff; border-color: #ffffff; }
         }
 
         .group-btn { border-color: #9d50bb; animation: glowing-purple 2s infinite alternate; }
         @keyframes glowing-purple {
-            0% { box-shadow: 0 0 5px #9d50bb, inset 0 0 5px #9d50bb; border-color: #9d50bb; }
-            100% { box-shadow: 0 0 20px #9d50bb, inset 0 0 10px #9d50bb; border-color: #ffffff; }
+            0% { box-shadow: 0 0 5px #9d50bb; border-color: #9d50bb; }
+            100% { box-shadow: 0 0 20px #9d50bb; border-color: #ffffff; }
         }
 
-        .back { margin-top: 20px; color: #aaa; text-decoration: none; }
+        .magic-button:active { transform: scale(0.95); }
+
+        .back { margin-top: 20px; color: #aaa; text-decoration: none; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <div class="info-box">
-        <h1>عالم غامبول المدهش: الموسم السابع</h1>
-        <p>يعود المسلسل بعنوان "عالم غامبول المدهش الغريب". بدأ العرض في صيف 2025 ليستكمل الأحداث الفوضوية الرائعة.</p>
-        <ul>
-            <li>يتكون الموسم من 40 حلقة مليئة بالمغامرات.</li>
-            <li>تحديثات بصرية مذهلة وتغييرات في الأداء الصوتي.</li>
-        </ul>
+        <h1>عالم غامبول المدهش: S7</h1>
+        <p>يعود المسلسل بعنوان "عالم غامبول المدهش الغريب". نسخة الموسم السابع الجديدة كلياً.</p>
     </div>
 
-    <div class="magic-button">@Gumballsubbot</div>
+    <div class="magic-button" onclick="copyToClipboard('@Gumballsubbot')">
+        📋 اضغط لنسخ: @Gumballsubbot
+    </div>
 
     <a href="https://t.me/Gumballsubbot" class="magic-button" target="_blank">
-        🤖 اضغط هنا لدخول البوت
+        🤖 دخول البوت (رابط مباشر)
     </a>
 
     <a href="https://t.me/allcartoonarabic" class="magic-button group-btn" target="_blank">
-        📢 الجروب الرئيسي للبوتات
+        📢 الجروب الرئيسي
     </a>
 
-    <a href="cartoon.html" class="back">🔙 العودة لقائمة الكرتون</a>
+    <a href="cartoon.html" class="back">🔙 العودة</a>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("تم نسخ اسم البوت: " + text);
+            }, function(err) {
+                console.error('فشل النسخ: ', err);
+            });
+        }
+    </script>
 
 </body>
 </html>
