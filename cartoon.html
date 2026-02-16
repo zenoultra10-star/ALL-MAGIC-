@@ -15,67 +15,95 @@
             align-items: center; 
             justify-content: center; 
             min-height: 100vh; 
-            text-align: center;
         }
 
         .container {
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        h1 { 
+            font-size: 2rem; 
+            margin-bottom: 10px; 
             color: #fff;
-            text-shadow: 0 0 10px #ff9f43;
+            text-shadow: 0 0 15px #00d2ff;
+            animation: pulse 2s infinite alternate;
         }
 
-        .btn {
-            display: block;
+        /* زر غامبول الضخم بالخلفية الجديدة */
+        .gumball-main-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            padding: 20px;
+            height: 220px; /* زيادة الطول ليظهر اللوجو بوضوح */
+            border-radius: 30px;
             text-decoration: none;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            border-radius: 15px;
-            border: 2px solid;
-            background: rgba(255, 255, 255, 0.03);
-            transition: 0.3s;
+            text-shadow: 3px 3px 10px #000;
+            border: 4px solid #00d2ff;
+            /* استخدام الصورة التي قمت بتسميتها gumball.jpg */
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('gumball.jpg'); 
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 25px #00d2ff;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+
+        .gumball-main-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 45px #00d2ff;
+            border-color: #fff;
+        }
+
+        /* زر تين تايتنز المضيء */
+        .titans-btn {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: rgba(106, 17, 203, 0.1);
+            border: 2px solid #9d50bb;
+            border-radius: 18px;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
+            animation: glow-purple 3s infinite alternate;
         }
 
-        /* زر غامبول - ينقل لصفحة المعلومات */
-        .gumball-btn { 
-            border-color: #00d2ff; 
-            animation: glow-blue 3s infinite alternate; 
+        @keyframes glow-purple {
+            0% { box-shadow: 0 0 5px #9d50bb; }
+            100% { box-shadow: 0 0 20px #9d50bb; }
         }
 
-        /* زر تين تايتنز - يظهر رسالة التنبيه */
-        .titans-btn { 
-            border-color: #9d50bb; 
-            animation: glow-purple 3.5s infinite alternate; 
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
         }
 
-        @keyframes glow-blue { 0% { box-shadow: 0 0 5px #00d2ff; } 100% { box-shadow: 0 0 15px #00d2ff; } }
-        @keyframes glow-purple { 0% { box-shadow: 0 0 5px #9d50bb; } 100% { box-shadow: 0 0 15px #9d50bb; } }
-
-        .btn:hover { transform: scale(1.02); background: rgba(255,255,255,0.1); }
-        
-        .back { margin-top: 30px; color: #aaa; text-decoration: none; font-size: 0.9rem; }
+        .back { margin-top: 30px; color: #888; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>اختر مسلسلك المفضل</h1>
+        <h1>Cartoon MAGIC</h1>
 
-        <a href="gumball.html" class="btn gumball-btn">🔵 GUMBALL NEW S7</a>
+        <a href="gumball.html" class="gumball-main-btn">
+            GUMBALL NEW S7
+        </a>
 
-        <div onclick="alert('سيتم الفتح الساعة 7 اليوم')" class="btn titans-btn">🟣 TEEN TITANS CLASSIC</div>
+        <div onclick="alert('سيتم الفتح الساعة 7 اليوم')" class="titans-btn">
+            🟣 TEEN TITANS CLASSIC
+        </div>
 
         <a href="index.html" class="back">🔙 العودة للرئيسية</a>
     </div>
